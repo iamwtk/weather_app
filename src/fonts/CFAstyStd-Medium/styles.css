@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'CFAstyStd-Medium';
+  src: url('CFAstyStd-Medium.eot?#iefix') format('embedded-opentype'),  url('CFAstyStd-Medium.otf')  format('opentype'),
+	     url('CFAstyStd-Medium.woff') format('woff'), url('CFAstyStd-Medium.ttf')  format('truetype'), url('CFAstyStd-Medium.svg#CFAstyStd-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

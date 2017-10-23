@@ -1,0 +1,33 @@
+
+/**
+ * Imports Normalize to reset browser styles
+ */
+@import '../../node_modules/normalize-scss/sass/normalize';
+
+/**
+ * Dumps Normalize content into style
+ * @type {[type]}
+ */
+@include normalize();
+
+/**
+ * Imports variables
+ */
+@import './variables';
+@import './fonts'; 
+
+body {
+  background-color: $base;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+
+}

@@ -1,0 +1,64 @@
+@import '../scss/mixins';
+@import '../scss/variables';
+@import '../scss/grid';
+@import '../scss/animations';
+
+.container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  .logo_icon {
+    width: 40px;
+    height: auto;
+    margin-top: 15px;
+    path {
+      fill: $purple;
+    }
+    @include xs {
+      width: 50px;
+    }
+    @include sm {
+      width: 75px;
+    }
+    @include md {
+      width: 100px;
+    }
+  }
+  .logo_icon_loading {
+    @extend .logo_icon;
+    animation: loader 1s infinite ease-in-out;
+  }
+
+  .menu_icon {
+    width: 35px;
+    height: auto;
+    position: absolute;
+    left: 1.5em;
+    top: 17px;
+    line {
+      stroke: $purple;
+    }
+
+    @include xs {
+      top: 23px;
+    }
+    @include sm {
+      width: 40px;
+      top: 32px;
+    }
+    @include md {
+      top:45px;
+    }
+  }
+  .menu_icon_open {
+    @extend .menu_icon;
+    line {
+      stroke: $base;
+    }
+  }
+
+}

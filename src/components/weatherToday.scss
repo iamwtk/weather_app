@@ -1,0 +1,77 @@
+@import "../scss/variables";
+@import "../scss/mixins";
+
+.weather_today {
+  display: flex;
+  justify-content: space-between;
+
+  @include sm {
+    justify-content: flex-end;
+  };
+
+  span {
+    display: block;
+    color: $white;
+  }
+  .col_left {
+    padding: 2em 0;
+
+    @include xs {
+      padding: 2em;
+    };
+
+    .day_name {
+      font-family: $font-bold;
+      font-size: 1.75em;
+
+      @include xs {
+        font-size: 2em;
+      };
+    }
+    .date {
+      font-family: $font-book;
+      font-size: 1em;
+    }
+
+  }
+
+  .col_right {
+    padding:2em 0;
+
+    @include xs {
+      padding: 2em;
+    };
+
+    .temp {
+      font-family: $font-bold;
+      font-size: 4em;
+      line-height: 0.8;
+
+      @include xs {
+        font-size: 7em;
+      };
+
+      @include lg {
+        font-size: 8.5em;
+      };
+    }
+    .place {
+      font-family: $font-bold;
+      font-size: 1em;
+
+      @include xs {
+        font-size: 2em;
+      };
+    }
+    .weather_icon {
+      display: block;
+      width: 80px;
+      height: auto;
+      margin: 1em auto;
+      path {
+        fill: $white;
+      }
+    }
+
+  }
+}

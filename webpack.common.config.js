@@ -26,10 +26,32 @@ module.exports = {
         test: /\.jsx$/,
         loader: 'babel-loader',
         exclude: /node_modules/
-      }
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|svg|otf)(\?.*$|$)/,
+        loader: [{
+          loader: 'file-loader',
+          options: {
+            name: 'fonts/[name].[ext]',
+            outputPath: './',
+            publicPath: '../'
+          }
+        }]
+
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+          'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
+          'image-webpack-loader'
+        ]
+      },
+
+
     ]
   },
   plugins: [
+
     HtmlWebpackPluginConfig
 
   ]

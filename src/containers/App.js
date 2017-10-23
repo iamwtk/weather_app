@@ -1,23 +1,30 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
-import HowItWorks from './HowItWorks';
+import React, { Component } from 'react'
+import { Route, Switch, Link } from 'react-router-dom'
+
+import Header from './Header'
+
+import Weather from './Weather'
+import AboutPage from '../components/AboutPage'
+import ContactPage from '../components/ContactPage'
+import HowItWorksPage from '../components/HowItWorksPage'
+
 
 class App extends Component {
 
   render() {
     return (
-      <div>
-        <Route path="/" exact component={Home} />
-        <Route path="/about" exact component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/how-it-works" component={HowItWorks} />
+      <div>      
+      <Switch>
+        <Route path="/" exact component={Weather} />
+        <Route path="/weather" exact component={Weather} />
+        <Route path="/about" exact component={AboutPage} />
+        <Route path="/how-it-works" exact component={HowItWorksPage} />
+        <Route path="/contact" exact component={ContactPage} />
+      </Switch>
       </div>
-    );
+    )
   }
 
 }
 
-export default App;
+export default App

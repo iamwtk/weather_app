@@ -1,0 +1,30 @@
+@import "../scss/variables";
+@import "../scss/mixins";
+
+
+.weather_container {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 4em 1.5em 0;
+
+  @include xs {
+    padding: 6.5em 1.5em 0;
+  };
+
+  &::before {
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background-color: $overlay;
+    z-index: 0;
+  }
+  * {
+    z-index: 2;
+    position: relative;
+  }
+
+}
