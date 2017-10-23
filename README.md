@@ -8,7 +8,7 @@ Demo of the app is available on https://dev.jarmill.com/weatherApp
 
 ## 1. Use build of application 
 
-- Download build package from [here](dev.jarmill.com/weatherApp/weather_app.zip) or clone `dist` folder from this repo
+- Download build package from [here](https://dev.jarmill.com/weatherApp/weather_app.zip) or clone `dist` folder from this repo
 - Upload contents of the package into root folder of your web server
 
 ## 2. Make your own build
