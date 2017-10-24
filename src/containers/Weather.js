@@ -74,14 +74,15 @@ class Weather extends Component {
       geocodeByAddress(this.state.address)
         .then(results => {
           //Get place short name
-          const placeName = results[0].address_components[0].short_name
+          const placeName = results[0].address_components[0].long_name
           //Get Country code
           let countryCode = ''
           //if country code available set else leave empty string
           { results[0].address_components[3]
            && results[0].address_components[3].short_name ?
             countryCode = results[0].address_components[3].short_name :
-             null }
+             countryCode = results[0].address_components[2].short_name }
+             
           //create payload object
           const payload = {name: placeName, countryCode: countryCode}
           //Save name into store
