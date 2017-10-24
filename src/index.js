@@ -10,7 +10,9 @@ import style from './scss/main.scss';
 import App from './containers/App'
 
 
-
+/**
+ * React main render method which sets up Redux store, React Router and renders App component
+ */
 ReactDOM.render(
   <Provider store={store}>
     <Router>

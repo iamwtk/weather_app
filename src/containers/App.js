@@ -9,11 +9,14 @@ import ContactPage from '../components/ContactPage'
 import HowItWorksPage from '../components/HowItWorksPage'
 
 
+/**
+ * Main Container Component, renders specific component based on the browser path
+ */
 class App extends Component {
 
   render() {
     return (
-      <div>      
+      <div>
       <Switch>
         <Route path="/" exact component={Weather} />
         <Route path="/weather" exact component={Weather} />

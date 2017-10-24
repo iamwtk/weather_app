@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import WeatherIcon from '../components/WeatherIcon';
+import WeatherIcon from '../components/WeatherIcon'
 
-import style from './weatherToday.scss';
+import style from './weatherToday.scss'
 
 /**
  * Renders Widget for todays weather
@@ -20,6 +20,6 @@ const WeatherToday = (props) => (
       <WeatherIcon addClass={style.weather_icon} icon={props.data.icon} />
     </div>
   </div>
-);
+)
 
-export default WeatherToday;
+export default WeatherToday

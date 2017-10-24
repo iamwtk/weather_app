@@ -1,13 +1,18 @@
 import React from 'react'
 import PlacesAutocomplete from 'react-places-autocomplete'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-import ErrorModule from './ErrorModule';
+import ErrorModule from './ErrorModule'
 
 import SearchIcon from '-!svg-react-loader?name=MyIcon!../icons/searchIcon.svg'
 
-import style from './weatherSearch.scss';
+import style from './weatherSearch.scss'
 
+
+/**
+ * WeatherSearch Component - shows search bar form
+ * @param {Object} props passed by parent component
+ */
 const WeatherSearch = (props) => (
   <div className={style.search_container}>
     <div id='search_bar' className={style.search_bar}>

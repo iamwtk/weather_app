@@ -7,6 +7,10 @@ import WeatherToday from '../components/WeatherToday';
 import Forecast from './Forecast';
 
 
+/**
+ * Connection to Redux store
+ * @return {object} passed to given component as props 
+ */
 @connect(store => {
   return {
     weather: store.weather.data,
@@ -15,15 +19,20 @@ import Forecast from './Forecast';
   }
 })
 
+
+/**
+ * WeatherScreen Container
+ */
 class WeatherScreen extends Component {
+
+  /**
+   * Constructor for WeatherScreen Class
+   * @param  {object} props props passed from Redux store
+   */
   constructor(props) {
     super(props);
     this.getDayName = this.getDayName.bind(this)
     this.getMonthName = this.getMonthName.bind(this)
-    this.coord = {
-      lat: this.props.weather.coord.lat,
-      lng: this.props.weather.coord.lon
-    }
   }
 
   /**
@@ -33,6 +42,9 @@ class WeatherScreen extends Component {
     this.updateInterval = setInterval(() => this.props.update(this.coord),30000) //calls getData method from parent component Weather every 30s
 
   }
+  /**
+   * Disables form redirect after succesfull mount
+   */
   componentDidMount() {
     this.props.dispatch({type: 'FORM_REDIRECT_DISABLED'})
   }
@@ -77,7 +89,11 @@ class WeatherScreen extends Component {
   }
 
 
-
+  /**
+   * Accepts date string and returns abreviation of month
+   * @param  {string} date string of date
+   * @return {string}      abreviation of the month e.g. 'Jan.'
+   */
   getMonthName(date) {
     //array of months of the year
     const months = [
@@ -94,15 +110,29 @@ class WeatherScreen extends Component {
       'Nov.',
       'Dec.'
     ]
-    //get day index
+    /**
+     * Gets number representation of month (0-11)
+     * @type {number}
+     */
     const i = new Date(date).getMonth()
-    //return day from array by index
+    /**
+     * Returns value from months array based on key from i
+     * @type {String}
+     */
     return months[i]
   }
-
+  /**
+   * Render method of component rendering WeatherToday and Forecast components
+   * @return ReactElement markup
+   */
   render() {
+
     const { placeName, weather } = this.props
-    const todaysDateObj = new Date()
+    const todaysDateObj = new Date() //new date object
+    /**
+     * Creating object to pass to WeatherToday component
+     * @type {Object}
+     */
     const todaysData = {
       day: this.getDayName(todaysDateObj),
       date: `${this.getMonthName(todaysDateObj)} ${todaysDateObj.getDate()}`,
@@ -110,13 +140,20 @@ class WeatherScreen extends Component {
       temp: `${weather.main.temp}`,
       icon: weather.weather[0].icon
     }
-    console.log(this.props);
-    const bgStyle={}
 
+    /**
+     * Style object for container
+     * @type {Object}
+     */
+    const bgStyle={}
+    /**
+     * Checks if there is image of place available
+     * @param  {Object} this.props.placeImage.urls is passed from Unsplash API if relevant image was found
+     * @return {Object} if image available style object contains background-image property
+     */
     if (this.props.placeImage.urls) {
       bgStyle.backgroundImage = `url(${this.props.placeImage.urls.custom})`
     }
-
 
     return (
       <div style={bgStyle} className={style.weather_container}>

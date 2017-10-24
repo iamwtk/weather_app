@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 /**
  * Loading SVG icons as Component via svg-react-loader in webpack
- * @type {Component}
+ * @type ReactComponent
  */
 import IconDay01 from '-!svg-react-loader?name=MyIcon!../icons/day01.svg'
 import IconNight01 from '-!svg-react-loader?name=MyIcon!../icons/night01.svg'
@@ -23,8 +23,16 @@ import IconNight13 from '-!svg-react-loader?name=MyIcon!../icons/night13.svg'
 import IconDay50 from '-!svg-react-loader?name=MyIcon!../icons/day50.svg'
 import IconNight50 from '-!svg-react-loader?name=MyIcon!../icons/night50.svg'
 
-class WeatherIcon extends Component {
 
+/**
+ * WeatherIcon Component
+ * renders SVG icon based on icon code passed via props
+ */
+class WeatherIcon extends Component {
+  /**
+   * Constructor for WeatherIcon Class
+   * @param  {object} props passed by parent component
+   */
   constructor(props) {
     super(props)
     /**
@@ -52,7 +60,10 @@ class WeatherIcon extends Component {
       '50n': IconNight50
     }
   }
-
+  /**
+   * Component Render Method
+   * @return ReactElement markup
+   */
   render() {
     /**
      * Gets Component from this.icons Object by key passed as a prop to WeatherIcon Component
@@ -60,18 +71,15 @@ class WeatherIcon extends Component {
      * if icon was not passed defaults to IconDay1
      * @type {Component}
      */
-    let IconName;
-    console.log(this.props);
+    let IconName
     this.props.icon ?
       IconName = this.icons[this.props.icon] :
       IconName = IconDay01
-
-
-
+      
     return <IconName className={this.props.addClass ? this.props.addClass : 'null'}/>
 
   }
 
 }
 
-export default WeatherIcon;
+export default WeatherIcon
