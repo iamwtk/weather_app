@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { openweathermap as apikey} from "../apikeys.js"
 
-export function getWeather(coord, name) {
+export function getWeather(coord) {
     return function(dispatch) {
 
       const lat = coord.lat
@@ -26,7 +26,7 @@ export function getForecast(coord) {
 
       const lat = coord.lat
       const lng = coord.lng
-      const url = 'https://api.openweathermap.org/data/2.5/forecast'      
+      const url = 'https://api.openweathermap.org/data/2.5/forecast'
       const getUrl = `${url}?lat=${lat}&lon=${lng}&units=metric&APPID=${apikey}`
 
       dispatch({type: 'GET_FORECAST'})

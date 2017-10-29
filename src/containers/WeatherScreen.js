@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import style from './weatherScreen.scss';
 
-import WeatherToday from '../components/WeatherToday';
+import WeatherToday from '../components/WeatherToday/WeatherToday'
 import Forecast from './Forecast';
 
 
 /**
  * Connection to Redux store
- * @return {object} passed to given component as props 
+ * @return {object} passed to given component as props
  */
 @connect(store => {
   return {
@@ -33,6 +34,10 @@ class WeatherScreen extends Component {
     super(props);
     this.getDayName = this.getDayName.bind(this)
     this.getMonthName = this.getMonthName.bind(this)
+    this.coord = {
+      lat: this.props.weather.coord.lat,
+      lng: this.props.weather.coord.lon
+    }
   }
 
   /**
@@ -154,14 +159,21 @@ class WeatherScreen extends Component {
     if (this.props.placeImage.urls) {
       bgStyle.backgroundImage = `url(${this.props.placeImage.urls.custom})`
     }
+    if (this.props.weather.coord) {
+      return (
+        <div style={bgStyle} className={style.weather_container}>
+          <WeatherToday data={todaysData} />
+          <Forecast getDayName={this.getDayName}/>
+        </div>
+      );
+    } else {
+      return (
+        <div style={bgStyle} className={style.weather_container}>
+          <h1>No data available, how about to <Link to='/'>search</Link> for a city?</h1>
+        </div>
+      )
+    }
 
-    return (
-      <div style={bgStyle} className={style.weather_container}>
-        <WeatherToday data={todaysData} />
-        <Forecast getDayName={this.getDayName}/>
-      </div>
-
-    );
   }
 
 }

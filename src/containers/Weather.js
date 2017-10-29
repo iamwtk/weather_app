@@ -7,7 +7,7 @@ import { getWeather, getForecast } from '../actions/weatherAction'
 import { getPlaceImage, getShortName } from '../actions/placeAction'
 
 import Header from './Header'
-import WeatherSearch from '../components/WeatherSearch'
+import WeatherSearch from '../components/WeatherSearch/WeatherSearch'
 import WeatherScreen from './WeatherScreen'
 
 
@@ -82,7 +82,7 @@ class Weather extends Component {
            && results[0].address_components[3].short_name ?
             countryCode = results[0].address_components[3].short_name :
              countryCode = results[0].address_components[2].short_name }
-             
+
           //create payload object
           const payload = {name: placeName, countryCode: countryCode}
           //Save name into store

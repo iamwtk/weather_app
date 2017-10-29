@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import style from './forecast.scss';
 
-import ForecastSingle from '../components/ForecastSingle'
+import ForecastSingle from '../components/ForecastSingle/ForecastSingle'
 
 
 

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorModule/> Snapshot should match the snapshot 1`] = `
+<div
+  className="error_module"
+>
+  <p>
+    Sorry, there was an error!
+  </p>
+  <span
+    key="0"
+  >
+    error 1
+  </span>
+  <span
+    key="1"
+  >
+    error 2
+  </span>
+</div>
+`;

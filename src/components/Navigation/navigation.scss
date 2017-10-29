@@ -1,6 +1,6 @@
-@import "../scss/variables";
-@import "../scss/animations";
-@import "../scss/mixins";
+@import "../../scss/variables";
+@import "../../scss/animations";
+@import "../../scss/mixins";
 
 .navigation {
   position: absolute;
@@ -13,6 +13,10 @@
   padding: 6.5em 1.5em 2em;
   animation: fadeIn .5s ease-in-out;
 
+  @include md {
+    width: 250px;
+    animation: slideInLeft .5s ease-in-out;
+  };
   @include lg {
     width: 300px;
     animation: slideInLeft .5s ease-in-out;

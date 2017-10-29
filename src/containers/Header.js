@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 
-import Navigation from '../components/Navigation';
+import Navigation from '../components/Navigation/Navigation';
 
 import MenuIcon from '-!svg-react-loader?name=MyIcon!../icons/MenuIcon.svg'
-import MenuIcon2 from '-!svg-react-loader?name=MyIcon!../icons/MenuIcon2.svg'
-import LogoIcon from '-!svg-react-loader?name=MyIcon!../icons/logoIcon.svg'
+import MenuIcon2 from '-!svg-react-loader?name=MyIcon2!../icons/MenuIcon2.svg'
+import LogoIcon from '-!svg-react-loader?name=logoIcon!../icons/logoIcon.svg'
 
 import style from './header.scss';
 
@@ -37,34 +37,25 @@ class Header extends Component {
    * Closes nav on mobile devices when user clicks on link
    */
   mobileCloseNav() {
-    window.innerWidth < 768 ?
+    window.innerWidth < 992 ?
     this.props.dispatch({type:'NAVIGATION_CLOSED'}) : null
   }
 
   render() {
+    const { navToggle, weather, forecast } = this.props
 
-    if (this.props.navToggle.toggle) {
-      return (
-      <div className={style.container}>
-        <Navigation closeNav={this.mobileCloseNav} />
-        <MenuIcon2 onClick={this.navToggle} className={style.menu_icon_open} />
-        <Link to='/'>
-          <LogoIcon className={ this.props.forecast.fetching || this.props.forecast.weather ? style.logo_icon_loading : style.logo_icon }/>
-        </Link>
-      </div>
-    )} else {
-      return(
+    return (
         <div className={style.container}>
-          <MenuIcon onClick={this.navToggle} className={style.menu_icon} />
-          <Link to='/'>
-            <LogoIcon className={ this.props.forecast.fetching || this.props.forecast.weather ? style.logo_icon_loading : style.logo_icon }/>
-          </Link>
+        { navToggle.toggle ? <Navigation closeNav={this.mobileCloseNav} /> : null }
+        { navToggle.toggle ? <MenuIcon2 onClick={this.navToggle} className={style.menu_icon_open} />
+          : <MenuIcon onClick={this.navToggle} className={style.menu_icon} /> }
+        <Link to='/'>
+          <LogoIcon className={ forecast.fetching || weather.fetching ? style.logo_icon_loading : style.logo_icon }/>
+        </Link>
         </div>
-      )
-
-    }
+    )
   }
 }
 
 
-export default Header;
+export default Header

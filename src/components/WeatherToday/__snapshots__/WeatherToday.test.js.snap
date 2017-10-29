@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WeatherToday/> Snapshot Should match snapshot 1`] = `
+<div
+  className="weather_today"
+>
+  <div
+    className="col_left"
+  >
+    <span
+      className="day_name"
+    >
+      Monday
+    </span>
+    <span
+      className="date"
+    >
+      Oct. 25
+    </span>
+  </div>
+  <div
+    className="col_right"
+  >
+    <span
+      className="temp"
+    >
+      32
+      °
+    </span>
+    <span
+      className="place"
+    >
+      Liberec, CZ
+    </span>
+    <WeatherIcon
+      addClass="weather_icon"
+      icon="01n"
+    />
+  </div>
+</div>
+`;

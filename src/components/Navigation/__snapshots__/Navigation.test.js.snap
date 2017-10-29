@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navigation /> Snapshot Should match the Snapshot 1`] = `
+<div
+  className="navigation"
+>
+  <h1>
+    Your best weather app
+  </h1>
+  <div
+    className="separator"
+  />
+  <ul>
+    <li
+      key="page-0"
+    >
+      <NavLink
+        activeClassName="active"
+        ariaCurrent="true"
+        key="link-0"
+        onClick={[Function]}
+        to="/about"
+      >
+        about
+      </NavLink>
+    </li>
+    <li
+      key="page-1"
+    >
+      <NavLink
+        activeClassName="active"
+        ariaCurrent="true"
+        key="link-1"
+        onClick={[Function]}
+        to="/how-it-works"
+      >
+        how it works
+      </NavLink>
+    </li>
+    <li
+      key="page-2"
+    >
+      <NavLink
+        activeClassName="active"
+        ariaCurrent="true"
+        key="link-2"
+        onClick={[Function]}
+        to="/contact"
+      >
+        contact
+      </NavLink>
+    </li>
+  </ul>
+</div>
+`;

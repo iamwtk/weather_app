@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WeatherSearch/> Errors Has errors should match the snapshot 1`] = `
+<div
+  className="search_container"
+>
+  <div
+    className="search_bar"
+    id="search_bar"
+  >
+    <form
+      className="form"
+      onSubmit={[Function]}
+    >
+      <PlacesAutocomplete
+        autocompleteItem={[Function]}
+        classNames={Object {}}
+        clearItemsOnError={false}
+        debounce={200}
+        googleLogo={true}
+        googleLogoType="default"
+        highlightFirstSuggestion={false}
+        onError={[Function]}
+        options={Object {}}
+        styles={Object {}}
+      />
+      <button
+        className="search_button"
+        type="submit"
+      />
+    </form>
+  </div>
+</div>
+`;
+
+exports[`<WeatherSearch/> Errors No errors should match the snapshot 1`] = `
+<div
+  className="search_container"
+>
+  <div
+    className="search_bar"
+    id="search_bar"
+  >
+    <form
+      className="form"
+      onSubmit={[Function]}
+    >
+      <PlacesAutocomplete
+        autocompleteItem={[Function]}
+        classNames={Object {}}
+        clearItemsOnError={false}
+        debounce={200}
+        googleLogo={true}
+        googleLogoType="default"
+        highlightFirstSuggestion={false}
+        onError={[Function]}
+        options={Object {}}
+        styles={Object {}}
+      />
+      <button
+        className="search_button"
+        type="submit"
+      />
+    </form>
+  </div>
+</div>
+`;
